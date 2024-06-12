@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D2B61142C1923F400076E1B /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B61092C1923F400076E1B /* Color+Extensions.swift */; };
+		2D2B61152C1923F400076E1B /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B610A2C1923F400076E1B /* UIWindow+Extension.swift */; };
+		2D2B61172C1923F400076E1B /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B61112C1923F400076E1B /* FlipView.swift */; };
+		2D2B61182C1923F400076E1B /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B61122C1923F400076E1B /* Shake.swift */; };
+		2DDC1B7F2C19251800520CDC /* MsgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B772C19251800520CDC /* MsgView.swift */; };
+		2DDC1B802C19251800520CDC /* GuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B782C19251800520CDC /* GuessView.swift */; };
+		2DDC1B812C19251800520CDC /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B792C19251800520CDC /* StatsView.swift */; };
+		2DDC1B822C19251800520CDC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B7A2C19251800520CDC /* GameView.swift */; };
+		2DDC1B832C19251800520CDC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B7B2C19251800520CDC /* SettingsView.swift */; };
+		2DDC1B842C19251800520CDC /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B7C2C19251800520CDC /* Keyboard.swift */; };
+		2DDC1B852C19251800520CDC /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B7D2C19251800520CDC /* LetterButtonView.swift */; };
+		2DDC1B862C19251800520CDC /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B7E2C19251800520CDC /* HelpView.swift */; };
+		2DDC1B8D2C19253500520CDC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B872C19253500520CDC /* Global.swift */; };
+		2DDC1B8E2C19253500520CDC /* UbiquitousStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B882C19253500520CDC /* UbiquitousStore.swift */; };
+		2DDC1B8F2C19253500520CDC /* allowed_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC1B892C19253500520CDC /* allowed_words.txt */; };
+		2DDC1B902C19253500520CDC /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B8A2C19253500520CDC /* Statistic.swift */; };
+		2DDC1B912C19253500520CDC /* solution_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC1B8B2C19253500520CDC /* solution_words.txt */; };
+		2DDC1B922C19253500520CDC /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B8C2C19253500520CDC /* Guess.swift */; };
+		2DDC1B952C19254000520CDC /* WordyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B932C19254000520CDC /* WordyDataModel.swift */; };
+		2DDC1B962C19254000520CDC /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B942C19254000520CDC /* ColorSchemeManager.swift */; };
+		2DDC1BA12C19271A00520CDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA02C19271A00520CDC /* Assets.xcassets */; };
+		2DDC1BA52C19288700520CDC /* essential_file.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA32C19288700520CDC /* essential_file.jpeg */; };
+		2DDC1BAD2C19297D00520CDC /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA72C19297C00520CDC /* Guess.swift */; };
+		2DDC1BAE2C19297D00520CDC /* UbiquitousStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BAB2C19297C00520CDC /* UbiquitousStore.swift */; };
+		2DDC1BAF2C19297D00520CDC /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA82C19297C00520CDC /* Statistic.swift */; };
+		2DDC1BB02C19297D00520CDC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BAC2C19297D00520CDC /* Global.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D21D4072C1921ED00FCED8C /* WORDY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WORDY.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D2B61092C1923F400076E1B /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		2D2B610A2C1923F400076E1B /* UIWindow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		2D2B61112C1923F400076E1B /* FlipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
+		2D2B61122C1923F400076E1B /* Shake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		2DDC1B772C19251800520CDC /* MsgView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgView.swift; sourceTree = "<group>"; };
+		2DDC1B782C19251800520CDC /* GuessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessView.swift; sourceTree = "<group>"; };
+		2DDC1B792C19251800520CDC /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		2DDC1B7A2C19251800520CDC /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		2DDC1B7B2C19251800520CDC /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2DDC1B7C2C19251800520CDC /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		2DDC1B7D2C19251800520CDC /* LetterButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
+		2DDC1B7E2C19251800520CDC /* HelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		2DDC1B872C19253500520CDC /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		2DDC1B882C19253500520CDC /* UbiquitousStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UbiquitousStore.swift; sourceTree = "<group>"; };
+		2DDC1B892C19253500520CDC /* allowed_words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allowed_words.txt; sourceTree = "<group>"; };
+		2DDC1B8A2C19253500520CDC /* Statistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		2DDC1B8B2C19253500520CDC /* solution_words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = solution_words.txt; sourceTree = "<group>"; };
+		2DDC1B8C2C19253500520CDC /* Guess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
+		2DDC1B932C19254000520CDC /* WordyDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordyDataModel.swift; sourceTree = "<group>"; };
+		2DDC1B942C19254000520CDC /* ColorSchemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
+		2DDC1BA02C19271A00520CDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2DDC1BA32C19288700520CDC /* essential_file.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = essential_file.jpeg; sourceTree = "<group>"; };
+		2DDC1BA72C19297C00520CDC /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
+		2DDC1BA82C19297C00520CDC /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
+		2DDC1BA92C19297C00520CDC /* solution_words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = solution_words.txt; sourceTree = "<group>"; };
+		2DDC1BAA2C19297C00520CDC /* allowed_words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = allowed_words.txt; sourceTree = "<group>"; };
+		2DDC1BAB2C19297C00520CDC /* UbiquitousStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbiquitousStore.swift; sourceTree = "<group>"; };
+		2DDC1BAC2C19297D00520CDC /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D21D4042C1921ED00FCED8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D21D3FE2C1921ED00FCED8C = {
+			isa = PBXGroup;
+			children = (
+				2D21D4092C1921ED00FCED8C /* WORDY */,
+				2D21D4082C1921ED00FCED8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2D21D4082C1921ED00FCED8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D21D4072C1921ED00FCED8C /* WORDY.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D21D4092C1921ED00FCED8C /* WORDY */ = {
+			isa = PBXGroup;
+			children = (
+				2DDC1BA62C19297C00520CDC /* Models */,
+				2DDC1BA02C19271A00520CDC /* Assets.xcassets */,
+				2D2B61132C1923F400076E1B /* Animations */,
+				2D2B610B2C1923F400076E1B /* Extensions */,
+				2D2B610D2C1923F400076E1B /* Preview Content */,
+				2D2B61102C1923F400076E1B /* ViewModels */,
+				2D2B610E2C1923F400076E1B /* Views */,
+			);
+			path = WORDY;
+			sourceTree = "<group>";
+		};
+		2D2B610B2C1923F400076E1B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2D2B61092C1923F400076E1B /* Color+Extensions.swift */,
+				2D2B610A2C1923F400076E1B /* UIWindow+Extension.swift */,
+			);
+			name = Extensions;
+			path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/WORDY/WORDY/Extensions";
+			sourceTree = "<group>";
+		};
+		2D2B610D2C1923F400076E1B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2DDC1BA32C19288700520CDC /* essential_file.jpeg */,
+			);
+			name = "Preview Content";
+			path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/WORDY/WORDY/Preview Content";
+			sourceTree = "<group>";
+		};
+		2D2B610E2C1923F400076E1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2DDC1B7A2C19251800520CDC /* GameView.swift */,
+				2DDC1B782C19251800520CDC /* GuessView.swift */,
+				2DDC1B7E2C19251800520CDC /* HelpView.swift */,
+				2DDC1B7C2C19251800520CDC /* Keyboard.swift */,
+				2DDC1B7D2C19251800520CDC /* LetterButtonView.swift */,
+				2DDC1B772C19251800520CDC /* MsgView.swift */,
+				2DDC1B7B2C19251800520CDC /* SettingsView.swift */,
+				2DDC1B792C19251800520CDC /* StatsView.swift */,
+			);
+			name = Views;
+			path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/WORDY/WORDY/Views";
+			sourceTree = "<group>";
+		};
+		2D2B610F2C1923F400076E1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DDC1B892C19253500520CDC /* allowed_words.txt */,
+				2DDC1B872C19253500520CDC /* Global.swift */,
+				2DDC1B8C2C19253500520CDC /* Guess.swift */,
+				2DDC1B8B2C19253500520CDC /* solution_words.txt */,
+				2DDC1B8A2C19253500520CDC /* Statistic.swift */,
+				2DDC1B882C19253500520CDC /* UbiquitousStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2D2B61102C1923F400076E1B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2DDC1B942C19254000520CDC /* ColorSchemeManager.swift */,
+				2DDC1B932C19254000520CDC /* WordyDataModel.swift */,
+				2D2B610F2C1923F400076E1B /* Models */,
+			);
+			name = ViewModels;
+			path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/WORDY/WORDY/ViewModels";
+			sourceTree = "<group>";
+		};
+		2D2B61132C1923F400076E1B /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				2D2B61112C1923F400076E1B /* FlipView.swift */,
+				2D2B61122C1923F400076E1B /* Shake.swift */,
+			);
+			name = Animations;
+			path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/WORDY/WORDY/Animations";
+			sourceTree = "<group>";
+		};
+		2DDC1BA62C19297C00520CDC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DDC1BAA2C19297C00520CDC /* allowed_words.txt */,
+				2DDC1BAC2C19297D00520CDC /* Global.swift */,
+				2DDC1BA72C19297C00520CDC /* Guess.swift */,
+				2DDC1BA92C19297C00520CDC /* solution_words.txt */,
+				2DDC1BA82C19297C00520CDC /* Statistic.swift */,
+				2DDC1BAB2C19297C00520CDC /* UbiquitousStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D21D4062C1921ED00FCED8C /* WORDY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D21D41B2C1921F000FCED8C /* Build configuration list for PBXNativeTarget "WORDY" */;
+			buildPhases = (
+				2D21D4032C1921ED00FCED8C /* Sources */,
+				2D21D4042C1921ED00FCED8C /* Frameworks */,
+				2D21D4052C1921ED00FCED8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WORDY;
+			productName = WORDY;
+			productReference = 2D21D4072C1921ED00FCED8C /* WORDY.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D21D3FF2C1921ED00FCED8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					2D21D4062C1921ED00FCED8C = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 2D21D4022C1921ED00FCED8C /* Build configuration list for PBXProject "WORDY" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2D21D3FE2C1921ED00FCED8C;
+			productRefGroup = 2D21D4082C1921ED00FCED8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D21D4062C1921ED00FCED8C /* WORDY */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D21D4052C1921ED00FCED8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DDC1B8F2C19253500520CDC /* allowed_words.txt in Resources */,
+				2DDC1BA12C19271A00520CDC /* Assets.xcassets in Resources */,
+				2DDC1BA52C19288700520CDC /* essential_file.jpeg in Resources */,
+				2DDC1B912C19253500520CDC /* solution_words.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D21D4032C1921ED00FCED8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DDC1B7F2C19251800520CDC /* MsgView.swift in Sources */,
+				2DDC1B862C19251800520CDC /* HelpView.swift in Sources */,
+				2D2B61142C1923F400076E1B /* Color+Extensions.swift in Sources */,
+				2DDC1BAE2C19297D00520CDC /* UbiquitousStore.swift in Sources */,
+				2DDC1B902C19253500520CDC /* Statistic.swift in Sources */,
+				2DDC1B8E2C19253500520CDC /* UbiquitousStore.swift in Sources */,
+				2DDC1BB02C19297D00520CDC /* Global.swift in Sources */,
+				2DDC1BAF2C19297D00520CDC /* Statistic.swift in Sources */,
+				2DDC1B842C19251800520CDC /* Keyboard.swift in Sources */,
+				2DDC1BAD2C19297D00520CDC /* Guess.swift in Sources */,
+				2DDC1B962C19254000520CDC /* ColorSchemeManager.swift in Sources */,
+				2DDC1B802C19251800520CDC /* GuessView.swift in Sources */,
+				2DDC1B8D2C19253500520CDC /* Global.swift in Sources */,
+				2DDC1B832C19251800520CDC /* SettingsView.swift in Sources */,
+				2D2B61172C1923F400076E1B /* FlipView.swift in Sources */,
+				2D2B61182C1923F400076E1B /* Shake.swift in Sources */,
+				2DDC1B812C19251800520CDC /* StatsView.swift in Sources */,
+				2DDC1B822C19251800520CDC /* GameView.swift in Sources */,
+				2DDC1B922C19253500520CDC /* Guess.swift in Sources */,
+				2DDC1B852C19251800520CDC /* LetterButtonView.swift in Sources */,
+				2DDC1B952C19254000520CDC /* WordyDataModel.swift in Sources */,
+				2D2B61152C1923F400076E1B /* UIWindow+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2D21D4192C1921F000FCED8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2D21D41A2C1921F000FCED8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D21D41C2C1921F000FCED8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WORDY/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mnohrden.WORDY;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2D21D41D2C1921F000FCED8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WORDY/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mnohrden.WORDY;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D21D4022C1921ED00FCED8C /* Build configuration list for PBXProject "WORDY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D21D4192C1921F000FCED8C /* Debug */,
+				2D21D41A2C1921F000FCED8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D21D41B2C1921F000FCED8C /* Build configuration list for PBXNativeTarget "WORDY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D21D41C2C1921F000FCED8C /* Debug */,
+				2D21D41D2C1921F000FCED8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2D21D3FF2C1921ED00FCED8C /* Project object */;
+}
