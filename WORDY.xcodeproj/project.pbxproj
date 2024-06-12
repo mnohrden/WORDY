@@ -29,10 +29,6 @@
 		2DDC1B962C19254000520CDC /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B942C19254000520CDC /* ColorSchemeManager.swift */; };
 		2DDC1BA12C19271A00520CDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA02C19271A00520CDC /* Assets.xcassets */; };
 		2DDC1BA52C19288700520CDC /* essential_file.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA32C19288700520CDC /* essential_file.jpeg */; };
-		2DDC1BAD2C19297D00520CDC /* Guess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA72C19297C00520CDC /* Guess.swift */; };
-		2DDC1BAE2C19297D00520CDC /* UbiquitousStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BAB2C19297C00520CDC /* UbiquitousStore.swift */; };
-		2DDC1BAF2C19297D00520CDC /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA82C19297C00520CDC /* Statistic.swift */; };
-		2DDC1BB02C19297D00520CDC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BAC2C19297D00520CDC /* Global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,12 +55,6 @@
 		2DDC1B942C19254000520CDC /* ColorSchemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		2DDC1BA02C19271A00520CDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DDC1BA32C19288700520CDC /* essential_file.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = essential_file.jpeg; sourceTree = "<group>"; };
-		2DDC1BA72C19297C00520CDC /* Guess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guess.swift; sourceTree = "<group>"; };
-		2DDC1BA82C19297C00520CDC /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
-		2DDC1BA92C19297C00520CDC /* solution_words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = solution_words.txt; sourceTree = "<group>"; };
-		2DDC1BAA2C19297C00520CDC /* allowed_words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = allowed_words.txt; sourceTree = "<group>"; };
-		2DDC1BAB2C19297C00520CDC /* UbiquitousStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UbiquitousStore.swift; sourceTree = "<group>"; };
-		2DDC1BAC2C19297D00520CDC /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +87,6 @@
 		2D21D4092C1921ED00FCED8C /* WORDY */ = {
 			isa = PBXGroup;
 			children = (
-				2DDC1BA62C19297C00520CDC /* Models */,
 				2DDC1BA02C19271A00520CDC /* Assets.xcassets */,
 				2D2B61132C1923F400076E1B /* Animations */,
 				2D2B610B2C1923F400076E1B /* Extensions */,
@@ -177,19 +166,6 @@
 			path = "../../../Library/Mobile Documents/com~apple~CloudDocs/Documents/Projects/WORDY/WORDY/Animations";
 			sourceTree = "<group>";
 		};
-		2DDC1BA62C19297C00520CDC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2DDC1BAA2C19297C00520CDC /* allowed_words.txt */,
-				2DDC1BAC2C19297D00520CDC /* Global.swift */,
-				2DDC1BA72C19297C00520CDC /* Guess.swift */,
-				2DDC1BA92C19297C00520CDC /* solution_words.txt */,
-				2DDC1BA82C19297C00520CDC /* Statistic.swift */,
-				2DDC1BAB2C19297C00520CDC /* UbiquitousStore.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,13 +241,9 @@
 				2DDC1B7F2C19251800520CDC /* MsgView.swift in Sources */,
 				2DDC1B862C19251800520CDC /* HelpView.swift in Sources */,
 				2D2B61142C1923F400076E1B /* Color+Extensions.swift in Sources */,
-				2DDC1BAE2C19297D00520CDC /* UbiquitousStore.swift in Sources */,
 				2DDC1B902C19253500520CDC /* Statistic.swift in Sources */,
 				2DDC1B8E2C19253500520CDC /* UbiquitousStore.swift in Sources */,
-				2DDC1BB02C19297D00520CDC /* Global.swift in Sources */,
-				2DDC1BAF2C19297D00520CDC /* Statistic.swift in Sources */,
 				2DDC1B842C19251800520CDC /* Keyboard.swift in Sources */,
-				2DDC1BAD2C19297D00520CDC /* Guess.swift in Sources */,
 				2DDC1B962C19254000520CDC /* ColorSchemeManager.swift in Sources */,
 				2DDC1B802C19251800520CDC /* GuessView.swift in Sources */,
 				2DDC1B8D2C19253500520CDC /* Global.swift in Sources */,
