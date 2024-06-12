@@ -29,6 +29,7 @@
 		2DDC1B962C19254000520CDC /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1B942C19254000520CDC /* ColorSchemeManager.swift */; };
 		2DDC1BA12C19271A00520CDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA02C19271A00520CDC /* Assets.xcassets */; };
 		2DDC1BA52C19288700520CDC /* essential_file.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC1BA32C19288700520CDC /* essential_file.jpeg */; };
+		2DDC1BB22C1939CD00520CDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC1BB12C1939CC00520CDC /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		2DDC1B942C19254000520CDC /* ColorSchemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		2DDC1BA02C19271A00520CDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DDC1BA32C19288700520CDC /* essential_file.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = essential_file.jpeg; sourceTree = "<group>"; };
+		2DDC1BB12C1939CC00520CDC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		2D21D3FE2C1921ED00FCED8C = {
 			isa = PBXGroup;
 			children = (
+				2DDC1BB12C1939CC00520CDC /* AppDelegate.swift */,
 				2D21D4092C1921ED00FCED8C /* WORDY */,
 				2D21D4082C1921ED00FCED8C /* Products */,
 			);
@@ -240,6 +243,7 @@
 			files = (
 				2DDC1B7F2C19251800520CDC /* MsgView.swift in Sources */,
 				2DDC1B862C19251800520CDC /* HelpView.swift in Sources */,
+				2DDC1BB22C1939CD00520CDC /* AppDelegate.swift in Sources */,
 				2D2B61142C1923F400076E1B /* Color+Extensions.swift in Sources */,
 				2DDC1B902C19253500520CDC /* Statistic.swift in Sources */,
 				2DDC1B8E2C19253500520CDC /* UbiquitousStore.swift in Sources */,
