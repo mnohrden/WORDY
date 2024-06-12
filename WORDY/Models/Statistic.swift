@@ -9,7 +9,7 @@ struct Statistic: Codable {
     var wins: Int {
         frequencies.reduce(0, +)
     }
-    
+    //h
     func saveStat() {
         NSUbiquitousKeyValueStore.stat = self
     }
