@@ -37,27 +37,15 @@ struct GameView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         HStack {
-                            /*
                             Button(action: {
-                                if !dm.hardMode {
+                                if !dm.hardMode || dm.gameOver {
                                     dm.newGame()
                                 }
                             }) {
                                 Image(systemName: "arrow.triangle.2.circlepath")
                             }
-                            .disabled(dm.hardMode) // Disable the button when hard mode is enabled
-
-                            if dm.hardMode {
-                                Color.clear // Transparent color overlay to prevent clicks
-                                    .background(Color.white.opacity(0.0001)) // Prevents user interaction
-                            }
-                             */
-                            
-                            Button(action: {
-                                dm.newGame()
-                            }) {
-                                Image(systemName: "arrow.triangle.2.circlepath")
-                            }
+                            .disabled(dm.hardMode && !dm.gameOver) // Disable the button when hard mode is enabled
+                            .opacity((!dm.hardMode || dm.gameOver) ? 1 : 0.5)
                             Button {
                                 showHelp.toggle()
                             } label: {

@@ -7,10 +7,8 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
                     VStack {
-                        /*
                         //hard mode code
                         Toggle("Hard Mode", isOn: $dm.hardMode)
-                        */
                         Text("Change Theme")
                         Picker("Display Mode", selection: $csManager.colorScheme) {
                             Text("Dark").tag(ColorScheme.dark)

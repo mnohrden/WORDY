@@ -34,11 +34,13 @@ class GameDataModel: ObservableObject {
     func newGame() {
         populateDefaults()
         selectedWord = selectWord()
+        selectedWord = "ASTER"
         correctlyPlacedLetters = [String](repeating: "-", count: 5)
         currentWord = ""
         inPlay = true
         tryIndex = 0
         gameOver = false
+        showStats = false
     }
     
     func selectWord() -> String {
@@ -91,7 +93,6 @@ class GameDataModel: ObservableObject {
             inPlay = false
         } else {
             if verifyWord(currentWord) {
-                /*
                 //hard mode
                 if hardMode {
                     if let hardWord = hardCorrectCheck() {
@@ -103,7 +104,6 @@ class GameDataModel: ObservableObject {
                         return
                     }
                 }
-            */
                 setCurrentGuessColors()
                 tryIndex += 1
                 currentWord = ""
@@ -149,7 +149,7 @@ class GameDataModel: ObservableObject {
       }
     }
     //hard mode code
-    /*func hardCorrectCheck() -> String? {
+    func hardCorrectCheck() -> String? {
         let guessLetters = guesses[tryIndex].guessLetters
         for i in 0...4 {
             if correctlyPlacedLetters[i] != "-" {
@@ -173,7 +173,6 @@ class GameDataModel: ObservableObject {
         return nil
     }
     //end hard mode
-     */
     func setCurrentGuessColors() {
         let correctLetters = selectedWord.map { String($0) }
         var frequency = [String: Int]()

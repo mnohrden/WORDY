@@ -63,8 +63,7 @@ struct StatsView: View {
                                         Text("\(dm.currentStat.frequencies[index])")
                                             .foregroundColor(.white)
                                             .padding(.horizontal,5),
-                                        alignment: .trailing
-                                    )
+                                        alignment: .trailing)
                             }
                         }
                         Spacer()
