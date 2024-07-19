@@ -24,7 +24,6 @@
 		BFC00B2427CE5353007619BC /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2327CE5353007619BC /* FlipView.swift */; };
 		BFC00B2627CE6414007619BC /* MsgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2527CE6414007619BC /* MsgView.swift */; };
 		BFC00B2827CE6AB9007619BC /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2727CE6AB9007619BC /* Statistic.swift */; };
-		BFC00B2A27CE736A007619BC /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2927CE736A007619BC /* StatsView.swift */; };
 		BFC00B2C27CE7C33007619BC /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2B27CE7C33007619BC /* UIWindow+Extension.swift */; };
 		BFC00B2E27CE8CF4007619BC /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2D27CE8CF3007619BC /* ColorSchemeManager.swift */; };
 		BFC00B3027CE8DD4007619BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC00B2F27CE8DD4007619BC /* SettingsView.swift */; };
@@ -53,7 +52,6 @@
 		BFC00B2327CE5353007619BC /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
 		BFC00B2527CE6414007619BC /* MsgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgView.swift; sourceTree = "<group>"; };
 		BFC00B2727CE6AB9007619BC /* Statistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistic.swift; sourceTree = "<group>"; };
-		BFC00B2927CE736A007619BC /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		BFC00B2B27CE7C33007619BC /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		BFC00B2D27CE8CF3007619BC /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		BFC00B2F27CE8DD4007619BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				BFC00B1C27CDFF20007619BC /* LetterButtonView.swift */,
 				BFC00B1E27CE0155007619BC /* Keyboard.swift */,
 				BFC00B2527CE6414007619BC /* MsgView.swift */,
-				BFC00B2927CE736A007619BC /* StatsView.swift */,
 				BFC00B2F27CE8DD4007619BC /* SettingsView.swift */,
 				BFC00B3127CE9463007619BC /* HelpView.swift */,
 			);
@@ -251,7 +248,6 @@
 				BFC00B3227CE9463007619BC /* HelpView.swift in Sources */,
 				BFC00B2C27CE7C33007619BC /* UIWindow+Extension.swift in Sources */,
 				BFC00B1B27CDF558007619BC /* Global.swift in Sources */,
-				BFC00B2A27CE736A007619BC /* StatsView.swift in Sources */,
 				BFC00B2827CE6AB9007619BC /* Statistic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

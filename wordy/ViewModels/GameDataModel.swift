@@ -4,7 +4,6 @@ class GameDataModel: ObservableObject {
     @Published var guesses: [Guess] = []
     @Published var incorrectAttempts = [Int](repeating: 0, count: 6)
     @Published var msgText: String?
-    @Published var showStats = false
     @AppStorage("hardMode") var hardMode = false
     
     var keyColors = [String : Color]()
@@ -16,7 +15,6 @@ class GameDataModel: ObservableObject {
     var tryIndex = 0
     var inPlay = false
     var gameOver = false
-    var currentStat: Statistic
     
     var gameStarted: Bool {
         !currentWord.isEmpty || tryIndex > 0
@@ -27,7 +25,6 @@ class GameDataModel: ObservableObject {
     }
     
     init() {
-        currentStat = Statistic.loadStat()
         newGame()
     }
     
@@ -40,7 +37,6 @@ class GameDataModel: ObservableObject {
         inPlay = true
         tryIndex = 0
         gameOver = false
-        showStats = false
     }
     
     func selectWord() -> String {
@@ -88,7 +84,6 @@ class GameDataModel: ObservableObject {
         if currentWord == selectedWord {
             gameOver = true
             setCurrentGuessColors()
-            currentStat.update(win: true, index: tryIndex)
             showMsg(with: "You Win")
             inPlay = false
         } else {
@@ -108,7 +103,6 @@ class GameDataModel: ObservableObject {
                 tryIndex += 1
                 currentWord = ""
                 if tryIndex == 6 {
-                    currentStat.update(win: false)
                     gameOver = true
                     inPlay = false
                     showMsg(with: selectedWord)
@@ -234,7 +228,6 @@ class GameDataModel: ObservableObject {
             msgText = nil
             if gameOver {
                 withAnimation(Animation.linear(duration: 0.2).delay(3)) {
-                    showStats.toggle()
                 }
             }
         }

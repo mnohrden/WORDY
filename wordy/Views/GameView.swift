@@ -25,9 +25,7 @@ struct GameView: View {
                         .padding(.top)
                     Spacer()
                 }
-                .disabled(dm.showStats)
                 .navigationBarTitleDisplayMode(.inline)
-                .disabled(dm.showStats)
                 .overlay(alignment: .top) {
                     if let msgText = dm.msgText {
                         MsgView(msgText: msgText)
@@ -63,14 +61,6 @@ struct GameView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         HStack {
                             Button {
-                                withAnimation {
-                                    dm.currentStat = Statistic.loadStat()
-                                    dm.showStats.toggle()
-                                }
-                            } label: {
-                                Image(systemName: "chart.bar")
-                            }
-                            Button {
                                 showSettings.toggle()
                             } label: {
                                 Image(systemName: "gearshape.fill")
@@ -81,9 +71,6 @@ struct GameView: View {
                 .sheet(isPresented: $showSettings) {
                     SettingsView()
                 }
-            }
-            if dm.showStats {
-                StatsView()
             }
         }
         .navigationViewStyle(.stack)

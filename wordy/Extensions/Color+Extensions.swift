@@ -19,6 +19,9 @@ extension Color {
     static var hard_mode_red: Color{
         Color(UIColor(named: "hard_mode_red")!)
     }
+    static var interaction: Color{
+        Color(UIColor(named: "interaction")!)
+    }
     static var systemBackground: Color {
         Color(.systemBackground)
     }
