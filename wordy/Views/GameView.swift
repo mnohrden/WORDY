@@ -40,15 +40,11 @@ struct GameView: View {
                                     dm.newGame()
                                 }
                             }) {
-                                Image(systemName: "arrow.triangle.2.circlepath")
+                                Image(systemName: "arrow.counterclockwise")
+                                    .font(.system(size: 18, weight: .heavy))
                             }
                             .disabled(dm.hardMode && !dm.gameOver) // Disable the button when hard mode is enabled
                             .opacity((!dm.hardMode || dm.gameOver) ? 1 : 0.5)
-                            Button {
-                                showHelp.toggle()
-                            } label: {
-                                Image(systemName: "questionmark.circle")
-                            }
                         }
                     }
                     ToolbarItem(placement: .principal) {
@@ -64,6 +60,7 @@ struct GameView: View {
                                 showSettings.toggle()
                             } label: {
                                 Image(systemName: "gearshape.fill")
+                                .font(.system(size: 18, weight: .bold))
                             }
                         }
                     }
@@ -73,16 +70,5 @@ struct GameView: View {
                 }
             }
         }
-        .navigationViewStyle(.stack)
-        .sheet(isPresented: $showHelp) {
-            HelpView()
-        }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameView()
-            .environmentObject(GameDataModel())
     }
 }

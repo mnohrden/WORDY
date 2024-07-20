@@ -31,7 +31,6 @@ class GameDataModel: ObservableObject {
     func newGame() {
         populateDefaults()
         selectedWord = selectWord()
-        selectedWord = "ASTER"
         correctlyPlacedLetters = [String](repeating: "-", count: 5)
         currentWord = ""
         inPlay = true

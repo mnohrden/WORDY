@@ -7,9 +7,25 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
                     VStack {
-                        //hard mode code
-                        Toggle("Hard Mode", isOn: $dm.hardMode)
+                        //hard mode
+                        GeometryReader { geometry in
+                            HStack(spacing: 10) {
+                                Text("Hard Mode")
+                                    .font(.title3.bold())
+                                    .foregroundColor(Color.hard_mode_red)
+                                    .frame(width: geometry.size.width * 0.7, alignment: .leading)
+                                Spacer()
+                                Toggle("", isOn: $dm.hardMode)
+                                    .labelsHidden()
+                                    .frame(width: 51)
+                            }
+                            .frame(width: geometry.size.width)
+                        }
+                        .frame(height: 44)
+                        .padding(.horizontal)
                         Text("Change Theme")
+                            .font(.title3)
+                            .fontWeight(.bold)
                         Picker("Display Mode", selection: $csManager.colorScheme) {
                             Text("Dark").tag(ColorScheme.dark)
                             Text("Light").tag(ColorScheme.light)
@@ -21,7 +37,10 @@ struct SettingsView: View {
                         """
                         )
                         Divider()
-                            Text(
+                        Text("Help")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                        Text(
                     """
                     
                     Guess the word in 6 tries.
@@ -29,28 +48,26 @@ struct SettingsView: View {
                     Each guess must be a valid 5 letter word. Hit the enter button to submit.
                     
                     After each guess, the color of the tiles will change to show how close your guess was to the word.
-                    
                     """
                             )
                             .font(.callout)
-                            Divider()
-                            Text("Examples")
-                                .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
-                                .fontWeight(.bold)
                             VStack(alignment: .leading) {
                                 Image("games")
                                     .resizable()
                                     .scaledToFit()
+                                    .scaleEffect(0.9)
                                 Text("None of the letters are in the word.")
                                     .font(.callout)
                                 Image("wordy")
                                     .resizable()
                                     .scaledToFit()
+                                    .scaleEffect(0.9)
                                 Text("The **R** is in the word, but in the wrong spot.")
                                     .font(.callout)
                                 Image("guess")
                                     .resizable()
                                     .scaledToFit()
+                                    .scaleEffect(0.9)
                                 Text("The **U** is in the word, and in the correct spot.")
                                     .font(.callout)
                             }
@@ -66,7 +83,7 @@ struct SettingsView: View {
                                 Text("✗")
                                     .font(.headline)
                                     .fontWeight(.bold)
-                                    .foregroundColor(Color.interaction)
+                                    .foregroundColor(Color.interaction_color)
                             }
                         }
                     }
