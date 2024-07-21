@@ -1,21 +1,21 @@
-Effective Date: 17 July, 2024
+Effective Date: 20 July, 2024
 
 Thank you for using WORDY, a word game app developed for entertainment purposes. This privacy policy outlines how we collect, use, and protect your information.
 
 1. Information We Collect
-WORDY does not collect any personal information, sensitive data, or data related to Body and Surroundings. We do not track or store any information about our users.
+WORDY does not collect any personal information, sensitive data, or data related to Body and Surroundings. The developer does not track or store any information about users.
 
 2. Use of Collected Information
-Since no data is collected, there is no information to use or share with third parties. We do not engage in any data-sharing practices.
+Since no data is collected, there is no information to use or share with third parties. The developer does not engage in any data-sharing practices.
 
 3. User Control and Access
 Users have full control over any data related to past game scores, which is stored locally on their device. This data is not shared with anyone.
 
 4. Data Security
-We take measures to ensure that the limited data collected (game outcomes) is securely stored on the user's device. We do not have access to or store any identifiable user information.
+The limited data collected (game outcomes) is securely stored on the user's device. The developer does not have access to or store any identifiable user information.
 
 5. Changes to This Privacy Policy
-We may update our privacy policy to reflect app updates or legal requirements. Users will be notified of any changes through in-app notifications. By continuing to use WORDY after any changes are made, you agree to the updated policy.
+The privacy policy may be to reflect app updates or legal requirements. Changes to the privacy policy are only effective when a user updates the app. By continuing to use WORDY after any changes are made, you agree to the updated policy.
 
-6. Contact Us
+6. Contact Me
 If you have any questions or concerns about this privacy policy or our data practices, please contact us at matthew.nohrden@gmail.com
