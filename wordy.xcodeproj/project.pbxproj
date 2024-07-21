@@ -172,7 +172,7 @@
 			dependencies = (
 			);
 			name = wordy;
-			productName = wordleclone;
+			productName = wordy;
 			productReference = BFC00AFB27CDE3FD007619BC /* wordy.app */;
 			productType = "com.apple.product-type.application";
 		};
