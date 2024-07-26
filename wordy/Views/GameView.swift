@@ -66,7 +66,7 @@ struct GameView: View {
                     }
                 }
                 .sheet(isPresented: $showSettings) {
-                    SettingsView()
+                SettingsView()
                 }
             }
         }
