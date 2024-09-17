@@ -1,4 +1,4 @@
-# <img src="https://github.com/user-attachments/assets/d4edeebc-be4c-469f-9597-f839ac390b29" alt="WORDY Game" style="max-width: 50px; width: 3%; margin-bottom: 10px;"> WORDY
+# <img src="https://github.com/user-attachments/assets/d4edeebc-be4c-469f-9597-f839ac390b29" alt="WORDY Game" style="max-width: 50px; width: 5%; margin-bottom: 10px;"> WORDY
 WORDY is a completely free and open source word game! Guess the correct word in six tries or less!
 
 <div style="text-align: center;">
