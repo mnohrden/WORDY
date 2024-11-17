@@ -8,3 +8,5 @@ WORDY is a completely free and open source word game! Guess the correct word in 
     <img src="https://github.com/user-attachments/assets/a432f1d4-da1d-4805-a811-a35b61daba3a" alt="WORDY Game Screenshot 2" style="max-width: 200px; width: 25%;">
   </div>
 </div>
+
+Don't use main branch
