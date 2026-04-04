@@ -16,6 +16,9 @@ class GameDataModel: ObservableObject {
     var inPlay = false
     var gameOver = false
     
+    // Challenge mode reference (set by wordyApp on launch)
+    var challengeManager: ChallengeManager?
+    
     var gameStarted: Bool {
         !currentWord.isEmpty || tryIndex > 0
     }
@@ -30,7 +33,12 @@ class GameDataModel: ObservableObject {
     
     func newGame() {
         populateDefaults()
-        selectedWord = selectWord()
+        // Use seeded word if challenge mode is active, otherwise random
+        if let cm = challengeManager, cm.isActive {
+            selectedWord = cm.wordForCurrentRound()
+        } else {
+            selectedWord = selectWord()
+        }
         correctlyPlacedLetters = [String](repeating: "-", count: 5)
         currentWord = ""
         inPlay = true
@@ -85,6 +93,10 @@ class GameDataModel: ObservableObject {
             setCurrentGuessColors()
             showMsg(with: "You Win")
             inPlay = false
+            // Auto-advance challenge round
+            if let cm = challengeManager, cm.isActive {
+                cm.advanceRound()
+            }
         } else {
             if verifyWord(currentWord) {
                 //hard mode
@@ -105,6 +117,10 @@ class GameDataModel: ObservableObject {
                     gameOver = true
                     inPlay = false
                     showMsg(with: selectedWord)
+                    // Auto-advance challenge round
+                    if let cm = challengeManager, cm.isActive {
+                        cm.advanceRound()
+                    }
                 }
             } else {
                 withAnimation {

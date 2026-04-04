@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GameView: View {
     @EnvironmentObject var dm: GameDataModel
+    @EnvironmentObject var cm: ChallengeManager
     @State private var showSettings = false
     @State private var showHelp = false
     var body: some View {
@@ -10,6 +11,24 @@ struct GameView: View {
                 VStack {
                     if Global.screenHeight < 600 {
                         Text("")
+                    }
+                    // Challenge mode indicator
+                    if cm.isActive, let seed = cm.currentSeed {
+                        HStack(spacing: 6) {
+                            Image(systemName: "person.2.fill")
+                                .font(.caption2)
+                            Text("Challenge \(seed)")
+                                .font(.caption2.bold())
+                            Text("•")
+                                .font(.caption2)
+                            Text("Round \(cm.currentRound + 1)")
+                                .font(.caption2)
+                        }
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(Color.enter_green)
+                        .cornerRadius(12)
                     }
                     Spacer()
                     VStack(spacing: 3) {
