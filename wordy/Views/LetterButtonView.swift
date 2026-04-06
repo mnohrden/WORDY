@@ -8,11 +8,15 @@ struct LetterButtonView: View {
             dm.addToCurrentWord(letter)
         } label: {
             Text(letter)
-                .font(.system(size: 20))
-                .frame(width: 35, height: 50)
-                .background(dm.keyColors[letter])
+                .font(.system(size: 18, weight: .medium))
+                .frame(width: 34, height: 44)
+                .background(
+                    RoundedRectangle(cornerRadius: 6, style: .continuous)
+                        .fill(dm.keyColors[letter] ?? Color(.systemGray4))
+                )
                 .foregroundColor(.primary)
-                .cornerRadius(5)
+                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                .shadow(color: .black.opacity(0.12), radius: 1, y: 1)
         }
         .buttonStyle(.plain)
     }
