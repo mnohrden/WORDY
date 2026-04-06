@@ -4,48 +4,57 @@ class GameDataModel: ObservableObject {
     @Published var guesses: [Guess] = []
     @Published var incorrectAttempts = [Int](repeating: 0, count: 6)
     @Published var msgText: String?
-    @AppStorage("hardMode") var hardMode = false
-    
+    // 0 = Easy, 1 = Medium, 2 = Hard
+    @AppStorage("difficulty") var difficulty = 0
+
     var keyColors = [String : Color]()
     var matchedLetters = [String]()
     var misplacedLetters = [String]()
     var correctlyPlacedLetters = [String]()
+    var wrongLetters = Set<String>()
+    var misplacedPositions = [String: Set<Int>]()
     var selectedWord = ""
     var currentWord = ""
     var tryIndex = 0
     var inPlay = false
     var gameOver = false
-    
+    @Published var showStats = false
+
     // Challenge mode reference (set by wordyApp on launch)
     var challengeManager: ChallengeManager?
-    
+
     var gameStarted: Bool {
         !currentWord.isEmpty || tryIndex > 0
     }
-    
+
     var disabledKeys: Bool {
         !inPlay || currentWord.count == 5
     }
-    
+
+    var canRestart: Bool {
+        difficulty == 0 || gameOver || !gameStarted
+    }
+
     init() {
         newGame()
     }
-    
+
     func newGame() {
         populateDefaults()
-        // Use seeded word if challenge mode is active, otherwise random
         if let cm = challengeManager, cm.isActive {
             selectedWord = cm.wordForCurrentRound()
         } else {
             selectedWord = selectWord()
         }
         correctlyPlacedLetters = [String](repeating: "-", count: 5)
+        wrongLetters = Set<String>()
+        misplacedPositions = [String: Set<Int>]()
         currentWord = ""
         inPlay = true
         tryIndex = 0
         gameOver = false
     }
-    
+
     func selectWord() -> String {
         guard let path = Bundle.main.path(forResource: "solution_words", ofType: "txt") else {
             print("Error: Could not find solution_words.txt")
@@ -63,16 +72,15 @@ class GameDataModel: ObservableObject {
             }
         } catch {
             print("Error: Could not read file: \(error)")
-            return "" // Or return a more informative error message
+            return ""
         }
     }
-    
+
     func populateDefaults() {
         guesses = []
         for index in 0...5 {
             guesses.append(Guess(index: index))
         }
-        //reset keyboard colors
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         for char in letters {
             keyColors[String(char)] = .unused
@@ -80,33 +88,41 @@ class GameDataModel: ObservableObject {
         matchedLetters = []
         misplacedLetters = []
     }
-    
-    //gameplay
+
+    // MARK: - Gameplay
+
     func addToCurrentWord(_ letter: String) {
         currentWord += letter
         updateRow()
     }
-    
+
     func enterWord() {
         if currentWord == selectedWord {
             gameOver = true
             setCurrentGuessColors()
             showMsg(with: "You Win")
             inPlay = false
-            // Auto-advance challenge round
             if let cm = challengeManager, cm.isActive {
                 cm.advanceRound()
             }
         } else {
             if verifyWord(currentWord) {
-                //hard mode
-                if hardMode {
-                    if let hardWord = hardCorrectCheck() {
-                        showMsg(with: hardWord)
+                // Hard mode validation
+                if difficulty == 2 {
+                    if let msg = hardWrongLetterCheck() {
+                        rejectGuess(msg)
                         return
                     }
-                    if let hardWord = hardMisplacedCheck() {
-                        showMsg(with: hardWord)
+                    if let msg = hardCorrectCheck() {
+                        rejectGuess(msg)
+                        return
+                    }
+                    if let msg = hardMisplacedCheck() {
+                        rejectGuess(msg)
+                        return
+                    }
+                    if let msg = hardMisplacedPositionCheck() {
+                        rejectGuess(msg)
                         return
                     }
                 }
@@ -117,47 +133,62 @@ class GameDataModel: ObservableObject {
                     gameOver = true
                     inPlay = false
                     showMsg(with: selectedWord)
-                    // Auto-advance challenge round
                     if let cm = challengeManager, cm.isActive {
                         cm.advanceRound()
                     }
                 }
             } else {
-                withAnimation {
-                    self.incorrectAttempts[tryIndex] += 1
-                }
-                showMsg(with: "Not in Word List")
-                incorrectAttempts[tryIndex] = 0
+                rejectGuess("Not in Word List")
             }
         }
     }
-    
+
     func removeLetterFromCurrentWord() {
         currentWord.removeLast()
         updateRow()
     }
-    
+
     func updateRow() {
         let guessWord = currentWord.padding(toLength: 5, withPad: " ", startingAt: 0)
         guesses[tryIndex].word = guessWord
     }
-    
+
     func verifyWord(_ word: String) -> Bool {
         let lower_word = word.lowercased()
-      guard let path = Bundle.main.path(forResource: "allowed_words", ofType: "txt") else {
-        print("Error: Could not find allowed_words.txt")
-        return false
-      }
-      do {
-        let content = try String(contentsOfFile: path)
-        let allowedWords = Set(content.components(separatedBy: .newlines))
-        return allowedWords.contains(lower_word)
-      } catch {
-        print("Error: Could not read allowed_words.txt: \(error)")
-        return false
-      }
+        guard let path = Bundle.main.path(forResource: "allowed_words", ofType: "txt") else {
+            print("Error: Could not find allowed_words.txt")
+            return false
+        }
+        do {
+            let content = try String(contentsOfFile: path)
+            let allowedWords = Set(content.components(separatedBy: .newlines))
+            return allowedWords.contains(lower_word)
+        } catch {
+            print("Error: Could not read allowed_words.txt: \(error)")
+            return false
+        }
     }
-    //hard mode code
+
+    // MARK: - Hard Mode Checks
+
+    private func rejectGuess(_ message: String) {
+        withAnimation {
+            self.incorrectAttempts[tryIndex] += 1
+        }
+        showMsg(with: message)
+        incorrectAttempts[tryIndex] = 0
+    }
+
+    func hardWrongLetterCheck() -> String? {
+        let guessLetters = guesses[tryIndex].guessLetters
+        for letter in guessLetters {
+            if wrongLetters.contains(letter) {
+                return "Try again"
+            }
+        }
+        return nil
+    }
+
     func hardCorrectCheck() -> String? {
         let guessLetters = guesses[tryIndex].guessLetters
         for i in 0...4 {
@@ -165,30 +196,44 @@ class GameDataModel: ObservableObject {
                 if guessLetters[i] != correctlyPlacedLetters[i] {
                     let formatter = NumberFormatter()
                     formatter.numberStyle = .ordinal
-                    return "\(formatter.string(for: i + 1)!) Letter must be `\(correctlyPlacedLetters[i])`."
+                    return "\(formatter.string(for: i + 1)!) letter must be \(correctlyPlacedLetters[i])"
                 }
             }
         }
         return nil
     }
-    
+
     func hardMisplacedCheck() -> String? {
         let guessLetters = guesses[tryIndex].guessLetters
         for letter in misplacedLetters {
             if !guessLetters.contains(letter) {
-                return ("Must contain the letter `\(letter)`.")
+                return "Must contain the letter \(letter)"
             }
         }
         return nil
     }
-    //end hard mode
+
+    func hardMisplacedPositionCheck() -> String? {
+        let guessLetters = guesses[tryIndex].guessLetters
+        for (index, letter) in guessLetters.enumerated() {
+            if let bannedPositions = misplacedPositions[letter], bannedPositions.contains(index) {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .ordinal
+                return "\(letter) can't be \(formatter.string(for: index + 1)!)"
+            }
+        }
+        return nil
+    }
+
+    // MARK: - Color Assignment
+
     func setCurrentGuessColors() {
         let correctLetters = selectedWord.map { String($0) }
         var frequency = [String: Int]()
         for letter in correctLetters {
             frequency[letter, default: 0] += 1
         }
-        
+
         // First pass: Mark correct letters
         for index in 0..<correctLetters.count {
             let correctLetter = correctLetters[index]
@@ -223,10 +268,31 @@ class GameDataModel: ObservableObject {
                 keyColors[guessLetter] = .wrong
             }
         }
-        
+
+        // Update hard mode tracking
+        if difficulty == 2 {
+            for index in 0..<5 {
+                let guessLetter = guesses[tryIndex].guessLetters[index]
+                let color = guesses[tryIndex].bgColors[index]
+                if color == .correct {
+                    correctlyPlacedLetters[index] = guessLetter
+                } else if color == .misplaced_letter {
+                    if !misplacedLetters.contains(guessLetter) {
+                        misplacedLetters.append(guessLetter)
+                    }
+                    misplacedPositions[guessLetter, default: Set()].insert(index)
+                }
+            }
+            for (letter, color) in keyColors {
+                if color == .wrong {
+                    wrongLetters.insert(letter)
+                }
+            }
+        }
+
         flipCards(for: tryIndex)
     }
-    
+
     func flipCards(for row: Int) {
         for col in 0...4 {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(col) * 0.2) {
@@ -234,7 +300,7 @@ class GameDataModel: ObservableObject {
             }
         }
     }
-    
+
     func showMsg(with text: String?) {
         withAnimation {
             msgText = text

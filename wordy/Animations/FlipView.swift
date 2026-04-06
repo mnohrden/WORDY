@@ -33,10 +33,10 @@ struct FlipView<Front, Back>: View where Front: View, Back: View {
     
     func flipFlashcard() {
         let animationTime = 0.5
-        withAnimation(Animation.linear(duration: animationTime)) {
+        withAnimation(.spring(response: animationTime, dampingFraction: 0.8)) {
             flashcardRotation += -180
         }
-        
+
         withAnimation(Animation.linear(duration: 0.001).delay(animationTime / 2)) {
             contentRotation += -180
             flipped.toggle()

@@ -4,23 +4,22 @@ struct StatsView: View {
     @EnvironmentObject var dm: GameDataModel
     var body: some View {
         VStack(spacing: 10) {
-            HStack{
+            HStack {
                 Spacer()
                 Button {
-                    withAnimation {
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
                         dm.showStats.toggle()
                     }
                 } label: {
-                    Text("✗")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.black)
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.title3)
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundColor(.secondary)
                 }
-                .offset(x:20, y: 10)
+                .offset(x: 10, y: 5)
             }
             Text("STATISTICS")
-                .font(.headline)
-                .fontWeight(.bold)
+                .font(.headline.weight(.bold))
             HStack(alignment: .top) {
                 SingleStat(value: dm.currentStat.games,
                            text: "Played")
@@ -36,14 +35,13 @@ struct StatsView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             Text("GUESS DISTRIBUTION")
-                .font(.headline)
-                .fontWeight(.bold)
+                .font(.headline.weight(.bold))
             VStack(spacing: 5) {
                 ForEach (0..<6) { index in
                     HStack {
                         Text("\(index + 1)")
                         if dm.currentStat.frequencies[index] == 0 {
-                            Rectangle()
+                            RoundedRectangle(cornerRadius: 4, style: .continuous)
                                 .fill(Color.wrong)
                                 .frame(width: 22, height: 20)
                                 .overlay(
@@ -52,7 +50,7 @@ struct StatsView: View {
                                 )
                         } else {
                             if let maxValue = dm.currentStat.frequencies.max() {
-                                Rectangle()
+                                RoundedRectangle(cornerRadius: 4, style: .continuous)
                                     .fill((dm.tryIndex == index && dm.gameOver)
                                           ? Color.correct
                                           : Color.wrong)
@@ -62,7 +60,7 @@ struct StatsView: View {
                                     .overlay(
                                         Text("\(dm.currentStat.frequencies[index])")
                                             .foregroundColor(.white)
-                                            .padding(.horizontal,5),
+                                            .padding(.horizontal, 5),
                                         alignment: .trailing)
                             }
                         }
@@ -79,8 +77,15 @@ struct StatsView: View {
         }
         .padding(.horizontal, 40)
         .frame(width: 320, height: 370)
-        .background(RoundedRectangle(cornerRadius: 15)
-                        .fill(Color.systemBackground))
+        .background(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(.ultraThinMaterial)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .strokeBorder(Color.primary.opacity(0.08), lineWidth: 0.5)
+        )
+        .shadow(color: .black.opacity(0.2), radius: 20, y: 8)
         .padding()
         .offset(y: -70)
     }

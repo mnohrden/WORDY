@@ -25,13 +25,16 @@ struct GameView: View {
                                 .font(.caption2)
                         }
                         .foregroundColor(.white)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
-                        .background(Color.enter_green)
-                        .cornerRadius(12)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(
+                            Capsule(style: .continuous)
+                                .fill(Color.enter_green.opacity(0.85))
+                        )
+                        .shadow(color: Color.enter_green.opacity(0.3), radius: 6, y: 2)
                     }
                     Spacer()
-                    VStack(spacing: 3) {
+                    VStack(spacing: 5) {
                         ForEach(0...5, id: \.self) { index in
                             GuessView(guess: $dm.guesses[index])
                                 .modifier(Shake(animatableData: CGFloat(dm.incorrectAttempts[index])))
@@ -55,22 +58,22 @@ struct GameView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         HStack {
                             Button(action: {
-                                if !dm.hardMode || dm.gameOver {
+                                if dm.canRestart {
                                     dm.newGame()
                                 }
                             }) {
                                 Image(systemName: "arrow.counterclockwise")
-                                    .font(.system(size: 18, weight: .heavy))
+                                    .font(.system(size: 18, weight: .semibold))
                             }
-                            .disabled(dm.hardMode && !dm.gameOver) // Disable the button when hard mode is enabled
-                            .opacity((!dm.hardMode || dm.gameOver) ? 1 : 0.5)
+                            .disabled(!dm.canRestart)
+                            .opacity(dm.canRestart ? 1 : 0.4)
                         }
                     }
                     ToolbarItem(placement: .principal) {
                         Text("WORDY")
                             .font(.largeTitle)
                             .fontWeight(.heavy)
-                            .foregroundColor(dm.hardMode ? Color(.hardModeRed) : .primary)
+                            .foregroundColor(dm.difficulty == 2 ? Color.hard_mode_red : .primary)
                             .minimumScaleFactor(0.5)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -79,13 +82,13 @@ struct GameView: View {
                                 showSettings.toggle()
                             } label: {
                                 Image(systemName: "gearshape.fill")
-                                .font(.system(size: 18, weight: .bold))
+                                    .font(.system(size: 18, weight: .semibold))
                             }
                         }
                     }
                 }
                 .sheet(isPresented: $showSettings) {
-                SettingsView()
+                    SettingsView()
                 }
             }
         }

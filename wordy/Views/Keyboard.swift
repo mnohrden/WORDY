@@ -6,34 +6,36 @@ struct Keyboard: View {
     var secondRowArray = "ASDFGHJKL".map{ String($0) }
     var thirdRowArray = "ZXCVBNM".map{ String($0) }
     var body: some View {
-        VStack {
-            HStack(spacing: 2) {
+        VStack(spacing: 8) {
+            HStack(spacing: 4) {
                 ForEach(topRowArray, id: \.self) { letter in
                     LetterButtonView(letter: letter)
-                        .background()
                 }
                 .disabled(dm.disabledKeys)
                 .opacity(dm.disabledKeys ? 0.6 : 1)
             }
-            HStack(spacing: 2) {
+            HStack(spacing: 4) {
                 ForEach(secondRowArray, id: \.self) { letter in
                     LetterButtonView(letter: letter)
                 }
             }
             .disabled(dm.disabledKeys)
             .opacity(dm.disabledKeys ? 0.6 : 1)
-            HStack(spacing: 2) {
+            HStack(spacing: 4) {
                 Button {
                     dm.enterWord()
                 } label: {
                     Text("Enter")
-                    
+                        .font(.system(size: 14, weight: .semibold))
+                        .frame(width: 58, height: 44)
+                        .foregroundColor(.white)
+                        .background(
+                            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                .fill(Color.enter_green)
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                        .shadow(color: .black.opacity(0.12), radius: 1, y: 1)
                 }
-                .font(.system(size: 20))
-                .frame(width: 60, height: 50)
-                .foregroundColor(.primary)
-                .background(Color.enter_green)
-                .cornerRadius(5)
                 .disabled(dm.currentWord.count < 5 || !dm.inPlay)
                 .opacity((dm.currentWord.count < 5 || !dm.inPlay) ? 0.6 : 1)
                 ForEach(thirdRowArray, id: \.self) { letter in
@@ -44,16 +46,21 @@ struct Keyboard: View {
                 Button {
                     dm.removeLetterFromCurrentWord()
                 } label: {
-                    Image(systemName: "delete.backward.fill")
-                        .font(.system(size: 20, weight: .heavy))
-                        .frame(width: 40, height: 50)
+                    Image(systemName: "delete.backward")
+                        .font(.system(size: 18, weight: .semibold))
+                        .frame(width: 40, height: 44)
                         .foregroundColor(.primary)
-                        .background(Color.unused)
-                        .cornerRadius(5)
+                        .background(
+                            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                .fill(Color(.systemGray3))
+                        )
+                        .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                        .shadow(color: .black.opacity(0.12), radius: 1, y: 1)
                 }
                 .disabled(!dm.inPlay || dm.currentWord.count == 0)
                 .opacity((!dm.inPlay || dm.currentWord.count == 0) ? 0.6 : 1)
             }
         }
+        .padding(.horizontal, 2)
     }
 }
