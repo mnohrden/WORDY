@@ -16,6 +16,9 @@ extension Color {
     static var enter_green: Color{
         Color(UIColor(named: "enter_green")!)
     }
+    static var join_green: Color{
+        Color(UIColor(named: "join_green")!)
+    }
     static var hard_mode_red: Color{
         Color(UIColor(named: "hard_mode_red")!)
     }

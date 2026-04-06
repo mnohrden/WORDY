@@ -35,7 +35,7 @@ struct SettingsView: View {
                                 .font(.title3)
                                 .fontWeight(.bold)
                             
-                            Text("Play the same words as your friends — no server needed. Share your code and everyone gets the same sequence.")
+                            Text("Play the same words as your friends")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                                 .multilineTextAlignment(.center)
@@ -73,7 +73,7 @@ struct SettingsView: View {
                                         .foregroundColor(.white)
                                         .padding(.horizontal, 16)
                                         .padding(.vertical, 8)
-                                        .background(Color.enter_green)
+                                        .background(Color.join_green)
                                         .cornerRadius(8)
                                     }
                                     
@@ -114,7 +114,7 @@ struct SettingsView: View {
                                         .foregroundColor(.white)
                                         .frame(maxWidth: .infinity)
                                         .padding(.vertical, 12)
-                                        .background(Color.enter_green)
+                                        .background(Color.join_green)
                                         .cornerRadius(10)
                                     }
                                     
@@ -156,7 +156,7 @@ struct SettingsView: View {
                                                 .foregroundColor(.white)
                                                 .padding(.horizontal, 20)
                                                 .frame(height: 44)
-                                                .background(cm.seedInput.count == 4 ? Color.enter_green : Color.gray)
+                                                .background(cm.seedInput.count == 4 ? Color.join_green : Color.gray)
                                                 .cornerRadius(8)
                                         }
                                         .disabled(cm.seedInput.count != 4)
