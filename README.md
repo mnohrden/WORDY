@@ -3,7 +3,8 @@ WORDY is a completely free and open source word game! Guess the correct word in 
 
 ## TODO
 - Add comp mode that uses Apples ```MultipeerConnectivity```
-
+- Change flipping animations
+- Dynamic "enter" button color
 
 
 <div style="text-align: center;">
